@@ -108,53 +108,6 @@ public class MainActivity extends AppCompatActivity {
         btn_his = (Button) findViewById(R.id.btn_his);
         btn_his.setOnClickListener(new ClickEvent());
 
-
-        //*test code*/
-        /*******************************************/
-        Button btn_set = (Button) findViewById(R.id.btn_set);
-        btn_set.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = "Trevor";
-                String address = "00-25-64-76-BD-40";
-                boolean state = true;
-
-                HashMap<String,Object> map = null;
-
-
-                for (int i = 0; i < mylist.size();i++){
-                    if (mylist.get(i).get("deviceName").equals(name)){
-                        if (mylist.get(i).get("deviceAddress").equals(address)){
-                            //mylist.get(i).remove("checkedState");
-                            //HashMap<String,Object> map = new HashMap<String,Object>();
-                            //map.put("checkedState",true);
-                            //mylist.add(map);
-                            mylist.get(i).remove("checkedState");
-                            mylist.get(i).put("checkedState",state);
-                            map = mylist.get(i);
-                            mylist.remove(i);//将设置过状态的元素放在最后一项，优化循环
-                            mylist.add(map);
-                            mSchedule.notifyDataSetChanged();
-                            break;
-                        }
-                    }
-                }
-                //Toast.makeText(MainActivity.this,"finding",Toast.LENGTH_SHORT).show();
-                /*for (int i=0; i<mylist.size(); i++){
-                    if (mylist.get(i).equals(map)){
-                        Toast.makeText(MainActivity.this,"found",Toast.LENGTH_SHORT).show();
-                        //mylist.get(i).remove("checkedState");
-                        //mylist.get(i).put("checkedState",true);
-                        //mSchedule.notifyDataSetChanged();
-                        break;
-                    }
-                }*/
-                //String s = (String) mylist.get(0).get("deviceName");
-                //Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
-            }
-        });
-        /********************************************************/
-
         //蓝牙状态显示
         tv_state = (TextView) findViewById(R.id.tv_state);
         tv_scanstate = (TextView) findViewById(R.id.tv_scanstate);
@@ -440,15 +393,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            //Bundle b = intent.getExtras();
-            //Object[] lstName = b.keySet().toArray();
             BluetoothDevice device = null;
-
-            // 显示所有收到的消息及其细节
-            /*for (int i = 0; i < lstName.length; i++) {
-                String keyName = lstName[i].toString();
-                Log.e(keyName, String.valueOf(b.get(keyName)));
-            }*/
 
             //蓝牙开关状态改变
             if(BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)){
@@ -474,7 +419,6 @@ public class MainActivity extends AppCompatActivity {
             //扫描到新设备
             if (BluetoothDevice.ACTION_FOUND.equals(action)){
                 device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                //Log.e("TAG","未配对|"+device.getName() + "|" + device.getAddress()) ;//debug
                 if (MODE ==0 || MODE==1){//如果MODE=3，那么停止对扫描到的设备进行信息配置
                     setState(device,MODE);
                 }
