@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10px">
+    <TextView
+        android:id="@+id/tv_bluetooth"
+        android:text="bluetooth state:     "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_state"
+        android:text="bluetooth off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_bluetooth"/>
+    <TextView
+        android:id="@+id/tv_scanstate"
+        android:text="scan stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_bluetooth"/>
+    <ToggleButton
+        android:id="@+id/tb_bluetooth"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_scanstate"/>
+    <Button
+        android:id="@+id/btn_search"
+        android:text="search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_scanstate"
+        android:layout_toRightOf="@id/tb_bluetooth"/>
+    <Button
+        android:id="@+id/btn_exit"
+        android:text="exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_scanstate"
+        android:layout_toRightOf="@id/btn_search"/>
+
+
+    <TextView
+        android:id="@+id/tv_listmenu"
+        android:text="list menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tb_bluetooth"/>
+    <Button
+        android:id="@+id/btn_import"
+        android:text="import"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_listmenu"/>
+    <Button
+        android:id="@+id/btn_export"
+        android:text="export"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_listmenu"
+        android:layout_toRightOf="@id/btn_import"/>
+    <Button
+        android:id="@+id/btn_init"
+        android:text="init"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_listmenu"
+        android:layout_toRightOf="@id/btn_export"/>
+    <Button
+        android:id="@+id/btn_his"
+        android:text="his"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_listmenu"
+        android:layout_toRightOf="@id/btn_init"/>
+    <Button
+        android:id="@+id/btn_open"
+        android:text="open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_import"/>
+    <Button
+        android:id="@+id/btn_save"
+        android:text="save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_import"
+        android:layout_toRightOf="@id/btn_open"/>
+    <Button
+        android:id="@+id/btn_set"
+        android:text="set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_import"
+        android:layout_toRightOf="@id/btn_save"/>
+
+    <TextView
+        android:id="@+id/tv_list"
+        android:text="list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_open"/>
+
+    <ListView
+        android:id="@+id/lv_btDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_list"
+        android:divider="#100">
+    </ListView>
+</RelativeLayout> 
