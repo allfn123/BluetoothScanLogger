@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 BA.startDiscovery();            //开启扫描
-                Toast.makeText(getApplicationContext(), "扫描准备开始", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "扫描准备开始", Toast.LENGTH_SHORT).show();
             }
 
             else if (v == btn_import){        //导入csv文件按钮，从指定csv文件中导入设备名单，包含设备名+设备地址
