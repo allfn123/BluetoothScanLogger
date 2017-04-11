@@ -34,13 +34,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_scanstate"
         android:layout_toRightOf="@id/tb_bluetooth"/>
+    <ToggleButton
+        android:id="@+id/tb_auto"
+        android:text="auto"
+        android:textOff="manual"
+        android:textOn="auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_scanstate"
+        android:layout_toRightOf="@id/btn_search"/>
     <Button
         android:id="@+id/btn_exit"
         android:text="exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_scanstate"
-        android:layout_toRightOf="@id/btn_search"/>
+        android:layout_toRightOf="@id/tb_auto"/>
 
 
     <TextView
@@ -70,13 +79,6 @@
         android:layout_below="@id/tv_listmenu"
         android:layout_toRightOf="@id/btn_export"/>
     <Button
-        android:id="@+id/btn_his"
-        android:text="his"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_listmenu"
-        android:layout_toRightOf="@id/btn_init"/>
-    <Button
         android:id="@+id/btn_open"
         android:text="open"
         android:layout_width="wrap_content"
@@ -90,8 +92,8 @@
         android:layout_below="@id/btn_import"
         android:layout_toRightOf="@id/btn_open"/>
     <Button
-        android:id="@+id/btn_set"
-        android:text="set"
+        android:id="@+id/btn_his"
+        android:text="his"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_import"
@@ -109,6 +111,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_list"
-        android:divider="#100">
+        android:divider="#100"
+        android:dividerHeight="1dp">
     </ListView>
 </RelativeLayout> 

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Created by luoguizhao on 2017/4/9.
- * 该类存储每台蓝牙设备的信息，包括蓝牙设备名和蓝牙设备地址，提供响应的getter和setter
+ * 该类存储每台蓝牙设备的信息，包括蓝牙设备名+蓝牙设备地址+设备签到情况，提供响应的getter和setter
  * 实现了两个构造器：BtDevice()和BtDevice(String,String)
  * 覆盖了toString(),hashCode()和equals()
  * 实现了Serializable接口，该类的对象可以序列化-反序列化
@@ -15,7 +15,7 @@ public class BtDevice implements Serializable {
 
     private String deviceName;//设别名
     private String deviceAdress;//设备地址
-    private boolean checkedState=false;
+    private boolean checkedState=false;//设备签到情况
 
     //默认构造器
     public BtDevice(){
